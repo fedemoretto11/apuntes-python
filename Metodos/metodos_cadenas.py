@@ -21,7 +21,7 @@ ends_with = cadena1.endswith("e") # devuelve true si termina con la cadena, fals
 starts_with = cadena1.startswith("H") # devuelve true si empieza con la cadena, falso si no lo hace
 
 replace = cadena1.replace("Hola","holanda papa")   # Reemplaza pedazo de cadena por una cadena dada. Dos parametros, el primero es el antiguo, y el segundo es el nuevo. Si encuentra el valor lo reemplaza, pero si no lo encuentra (...)
-split =  cadena1.split(" ") # Separa cadena con la cadena que pasamos, el valor que le pasamos es por lo que queremos dividir
+split =  cadena_numero.split() # Separa cadena con la cadena que pasamos, el valor que le pasamos es por lo que queremos dividir
 
 
 print(split)

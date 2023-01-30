@@ -258,26 +258,292 @@
 # p3 = p4
 # p3.Mostrar_punto()
 
-class Punto:
-    def __init__(self,x,y):
-        self.X = x
-        self.Y = y
-    def Mostrar_punto(self):
-        print("El punto es (",self.X,",",self.Y,")")
+# class Punto:
+#     def __init__(self,x,y):
+#         self.X = x
+#         self.Y = y
+#     def Mostrar_punto(self):
+#         print("El punto es (",self.X,",",self.Y,")")
         
         
-class Triangulo:
-    def __init__(self, v1,v2,v3):
-        self.V1 = v1
-        self.V2 = v2
-        self.V3 = v3
-    def Mostrar_vertices(self):
-        self.V1.Mostrar_punto()
-        self.V2.Mostrar_punto()
-        self.V3.Mostrar_punto()
+# class Triangulo:
+#     def __init__(self, v1,v2,v3):
+#         self.V1 = v1
+#         self.V2 = v2
+#         self.V3 = v3
+#     def Mostrar_vertices(self):
+#         self.V1.Mostrar_punto()
+#         self.V2.Mostrar_punto()
+#         self.V3.Mostrar_punto()
         
-v1 = Punto(3,4)
-v2 = Punto(6,8)
-v3 = Punto(9,2)
-triangulo = Triangulo(v1,v2,v3)
-triangulo.Mostrar_vertices()
+# v1 = Punto(3,4)
+# v2 = Punto(6,8)
+# v3 = Punto(9,2)
+# triangulo = Triangulo(v1,v2,v3)
+# triangulo.Mostrar_vertices()
+
+
+#   _________________________________________
+#   PROGRAMACION ORIENTADA A OBJETOS AVANZADA
+
+# class Punto_publico:
+#     def __init__(self, x, y):
+#         self.X = x
+#         self.Y = y
+    
+# class Punto_privado:
+#     def __init__(self, x, y):
+#         self.__X = x
+#         self.__Y = y
+#     def Get_x(self):
+#         return self.__X
+#     def Get_y(self):
+#         return self.__Y
+#     def Set_x(self,x):
+#         self.__X = x
+#     def Set_y(self, y):
+#         self.__Y = y
+        
+        
+# publico = Punto_publico(4,6)
+# privado = Punto_privado(7,3)
+# print(f"Valores punto publico: {publico.X}, {publico.Y}")
+# print(f"Valores punto privado: {privado.Get_x()}, {privado.Get_y()}")
+# publico.X = 8
+# privado.Set_x(9)
+# print(f"Valores punto publico: {publico.X}, {publico.Y}")
+# print(f"Valores punto privado: {privado.Get_x()}, {privado.Get_y()}")
+
+
+# class Operar_valores:
+#     def __init__(self, num1, num2):
+#         self.__num1 = num1
+#         self.__num2 = num2
+#     def __Sumar(self):
+#         return self.__num1 + self.__num2
+#     def __Restar(self):
+#         return self.__num1 - self.__num2
+#     def Operar(self):
+#         print(f"El resultado de la suma es {self.__Sumar()}")
+#         print(f"El resultado de la resta es {self.__Restar()}")
+        
+        
+# operar_valores = Operar_valores(10,5)
+# operar_valores.Operar()
+# print(f"El resultado de la suma es {operar_valores.__Sumar()}") # Sale el error por intentar acceder a metodos privados
+
+
+# ________
+# HERENCIA
+
+# class Electrodomestico:
+#     def __init__(self):
+#         self.__Encendido = False
+#         self.__Tension = 0
+#     def Encender(self):
+#         self.__Encendido = True
+#     def Apagar(self):
+#         self.__Encendido = False
+#     def Encendido(self):
+#         return self.__Encendido
+#     def Set_tension(self, tension):
+#         self.__Tension = tension
+#     def Get_tension(self):
+#         return self.__Tension
+    
+# class Lavadora(Electrodomestico):
+#     def __init__(self):
+#         self.__RPM = 0
+#         self.__Kilos = 0
+#     def Set_RPM(self, rpm):
+#         self.__RPM = rpm
+#     def Set_kilos(self, kgs):
+#         self.__Kilos = kgs
+#     def Mostrar_lavadora(self):
+#         print("")
+#         print("**********")
+#         print("Lavadora:")
+#         print(f"\tRPM: {self.__RPM}")
+#         print(f"\tKilos: {self.__Kilos}")
+#         print(f"\tTension: {self.Get_tension()}")
+#         if self.Encendido():
+#             print("\tLavadora Encendida")
+#         else:
+#             print("\tLavadora Apagada")
+#         print("**********")
+#         print("")
+        
+# class Microondas(Electrodomestico):
+#     def __init__(self):
+#         self.__Max_power = 0
+#         self.__Grill = False
+#     def Set_max_power(self, power):
+#         self.__Max_power = power
+#     def Set_grill(self, grill):
+#         self.__Grill = grill
+#     def Mostrar_microondas(self):
+#         print("")
+#         print("**********")
+#         print("Microondas:")
+#         print(f"\tPotencia Maxima: {self.__Max_power}")
+#         if self.__Grill == True:
+#             print(f"\tGrill: Si")
+#         else:
+#             print(f"\tGrill: No")
+#         print(f"\tTension: {self.Get_tension()}")
+#         if self.Encendido():
+#             print("\tMicroondas Encendido")
+#         else:
+#             print("\tMicroondas Apagado")
+#         print("**********")
+#         print("")       
+        
+# lavadora = Lavadora()
+# lavadora.Set_RPM(1200)
+# lavadora.Set_kilos(12)
+# lavadora.Set_tension(220)
+# lavadora.Encender()
+
+# microondas = Microondas()
+# microondas.Set_max_power(0)
+# microondas.Set_grill(True)
+# microondas.Set_tension(220)
+# microondas.Encender()
+
+# lavadora.Mostrar_lavadora()
+# microondas.Mostrar_microondas()
+# lavadora.Apagar()
+# lavadora.Mostrar_lavadora()
+# microondas.Apagar()
+# microondas.Mostrar_microondas()
+
+
+# _________________
+# HERENCIA MULTIPLE
+
+# class Hotel():
+#     def __init__(self):
+#         self.__Rooms = 0
+#         self.__Stars = 0
+#     def Set_rooms(self, rooms):
+#         self.__Rooms = rooms
+#     def Set_Stars(self, stars):
+#         self.__Stars = stars
+#     def Mostrar_hotel(self):
+#         print("---------------")
+#         print("Hotel:")
+#         print(f"Estrellas: {self.__Stars}")
+#         print(f"Habitaciones: {self.__Rooms}")
+#         print("---------------")
+        
+# class Restaurant():
+#     def __init__(self):
+#         self.__Tenedores = 0
+#         self.__Apertura = 0
+#     def Set_tenedores(self, tenedores):
+#         self.__Tenedores = tenedores
+#     def Set_Apertura(self,apertura):
+#         self.__Apertura = apertura
+#     def Mostrar_restaurant(self):
+#         print("---------------")
+#         print("Restaurant:")
+#         print(f"Tenedores: {self.__Tenedores}")
+#         print(f"Horario de apertura: {self.__Apertura}")
+#         print("---------------")        
+        
+# class Negocio(Hotel, Restaurant):
+#     def __init__(self):
+#         self.__Nombre = ""
+#         self.__Direccion = ""
+#         self.__Telefono = ()
+#     def Set_nombre(self, nombre):
+#         self.__Nombre = nombre
+#     def Set_direccion(self, direccion):
+#         self.__Direccion = direccion
+#     def Set_telefono(self, telefono):
+#         self.__Telefono = telefono
+#     def Mostrar_negocio(self):
+#         print("*********************")
+#         print("Negocio:")
+#         print(f"Nombre: {self.__Nombre}")
+#         print(f"Direccion: {self.__Direccion}")
+#         print(f"Telefono: {self.__Telefono}")
+#         self.Mostrar_hotel()
+#         self.Mostrar_restaurant()
+#         print("*********************")    
+    
+    
+# negocio = Negocio()
+# negocio.Set_Stars(4)
+# negocio.Set_rooms(26)
+# negocio.Set_tenedores(52)
+# negocio.Set_Apertura(20)
+# negocio.Set_nombre("El Palacete Feliz")
+# negocio.Set_direccion("Avenida Hapinnes 69")
+# negocio.Set_telefono("00224-2723-2934")
+# negocio.Mostrar_negocio()
+
+
+#   ________
+#   FICHEROS
+
+# archivo = open("python_un_finde\\prueba.txt","r", encoding="UTF-8")
+# texto = archivo.read()
+# print(texto)
+# archivo.close()
+
+# for linea in open("python_un_finde\\prueba.txt","r", encoding="UTF-8"):
+#     print(linea)
+ 
+    
+# flectura = open("python_un_finde\\prueba.txt","r", encoding="UTF-8")
+# texto = flectura.read()
+# print("*****Texto original*****")
+# print(texto)
+# print("")
+# flectura.close()
+
+# f_escritura = open("python_un_finde\\prueba.txt","a", encoding="UTF-8")   
+# f_escritura.write("Argentina campeon del mundo\n")
+# f_escritura.close()
+# print("*****Texto modificado*****")
+# flectura = open("python_un_finde\\prueba.txt","r", encoding="UTF-8")
+# texto = flectura.read()
+# print(texto)
+# print("")
+# flectura.close()
+
+# fcrear = open("creando_un_fichero.txt", "x")
+# fcrear.write("Hola papa\n")
+# fcrear.write("A ver si sale bien esto")
+# fcrear.close()
+
+# flectura = open("python_un_finde\\creando_un_fichero.txt","r", encoding="UTF-8")
+# texto = flectura.read()
+# print(texto)
+# flectura.close()
+
+
+# f_reescribir = open("python_un_finde\\creando_un_fichero.txt","w", encoding="UTF-8")
+# f_reescribir.write("Esta linea deberia ser nueva\n")
+# f_reescribir.write("Lo mismo que esta\n")
+# f_reescribir.close()
+# f_leer = open("python_un_finde\\creando_un_fichero.txt","r", encoding="UTF-8")
+# texto = f_leer.read()
+# print(texto)
+# f_leer.close()
+
+
+#   ___________
+#   EXCEPCIONES
+
+# try:
+#     print(3/0)
+# except ZeroDivisionError:
+#     print("Error, NO SE PUEDE DIVIDIR POR CERO, SALAME")
+# except:
+#     print("La estas pifiando pa")
+# else:
+#     print("Bien papa, no son tan pajero como el de arriba")
+# finally:
+#     print("Programa terminado, bobolon")
